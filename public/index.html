@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HireGraph-AI | From Resumes to Real Capability</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Chart.js for Responsive Radar, Donut, and Benchmark charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-navbar">
+    <div class="brand-section">
+      <div class="brand-logo-badge">HG</div>
+      <div class="brand-text">
+        <h1>HireGraph<span class="highlight">-AI</span> <span class="team-badge">Team Laapata Ladies • CSE-2nd Year</span></h1>
+        <div class="brand-subtitle">‘From resumes to real capability.’ — Evidence-Based AI Talent Intelligence Platform</div>
+      </div>
+    </div>
+
+    <div class="navbar-controls">
+      <div class="role-selector-wrap">
+        <label for="roleSelect">Target Role:</label>
+        <select id="roleSelect">
+          <!-- Dynamically populated from /api/roles -->
+        </select>
+      </div>
+
+      <button class="btn-primary" id="btnOpenIngestModal">
+        <span>+</span> Ingest New Candidate
+      </button>
+    </div>
+  </header>
+
+  <!-- App Body Layout -->
+  <div class="app-container">
+    
+    <!-- Left Sidebar: Candidate Pool -->
+    <aside class="sidebar-panel">
+      <div class="sidebar-header">
+        <div class="sidebar-title-row">
+          <span class="sidebar-title">Candidate Pool</span>
+          <span class="candidate-count-badge" id="candidateCountBadge">5 Candidates</span>
+        </div>
+        <div class="search-box-wrap">
+          <input type="text" id="searchCandidateInput" placeholder="Filter by name, role, skill..." />
+        </div>
+      </div>
+
+      <!-- Candidate Card List -->
+      <div class="candidate-list" id="candidateList">
+        <!-- Dynamically rendered via app.js -->
+      </div>
+
+      <!-- Recruiter Impact Banner (Slide 6) -->
+      <div class="sidebar-impact-banner">
+        <div class="impact-header">
+          <span>⚡ Platform Impact</span>
+        </div>
+        <div class="impact-stats">
+          <strong>70%</strong> reduction in manual resume screening time.<br/>
+          Evidence-backed capability ranking replaces keyword matching bias.
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="main-workspace">
+      
+      <!-- Top Candidate Hero Banner -->
+      <section class="candidate-hero">
+        <div class="hero-profile-row">
+          <div class="hero-info">
+            <img class="hero-avatar" id="heroAvatar" src="" alt="Candidate" />
+            <div class="hero-text">
+              <h2>
+                <span id="heroName">Loading...</span>
+                <span id="heroVerdictBadge" class="match-pill emerald">STRONG HIRE</span>
+              </h2>
+              <div class="hero-sub" id="heroTitle">Senior Engineer</div>
+              <div class="hero-extra">
+                <span id="heroLocation">📍 Bengaluru</span>
+                <span id="heroExp">💼 4 yrs Exp</span>
+                <span id="heroStatus">⚡ Available</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-stats-panel">
+            <div class="hero-stat-card highlight">
+              <div class="stat-value" id="heroStatMatch">--%</div>
+              <div class="stat-label">Match Score</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="stat-value" id="heroStatPercentile">--th</div>
+              <div class="stat-label">Percentile</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="stat-value" id="heroStatRepos">--</div>
+              <div class="stat-label">Verified Repos</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="stat-value" id="heroStatLeetCode">--</div>
+              <div class="stat-label">LeetCode Solved</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab Navigation -->
+      <nav class="tab-navigation">
+        <button class="tab-btn active" data-tab="tab-graph">
+          🕸️ Cross-Platform Evidence Graph
+        </button>
+        <button class="tab-btn" data-tab="tab-developer">
+          💻 Developer Intelligence
+        </button>
+        <button class="tab-btn" data-tab="tab-role-eval">
+          ⚖️ Role-Adaptive Evaluation
+        </button>
+        <button class="tab-btn" data-tab="tab-interview">
+          🤖 AI Multi-Agent Interview Panel
+        </button>
+        <button class="tab-btn" data-tab="tab-report">
+          📄 Explainable Hiring Report
+        </button>
+        <button class="tab-btn" data-tab="tab-benchmarks">
+          📊 Applicant Pool Benchmarking
+        </button>
+      </nav>
+
+      <!-- Tab Content Area -->
+      <div class="tab-content-area">
+
+        <!-- TAB 1: EVIDENCE GRAPH (Slide 3, 4, 5, 7) -->
+        <div class="tab-pane active" id="tab-graph">
+          <div class="graph-container-wrap">
+            <div class="graph-canvas-area">
+              <div class="graph-controls">
+                <button class="graph-ctrl-btn" id="btnZoomIn">+</button>
+                <button class="graph-ctrl-btn" id="btnZoomOut">-</button>
+                <button class="graph-ctrl-btn" id="btnResetView">Reset Center</button>
+              </div>
+
+              <canvas id="evidenceCanvas"></canvas>
+
+              <div class="graph-legend-overlay">
+                <div class="legend-item"><span class="legend-color-dot" style="background-color: #4338ca;"></span> Candidate</div>
+                <div class="legend-item"><span class="legend-color-dot" style="background-color: #0284c7;"></span> Platforms (GitHub, LeetCode, etc.)</div>
+                <div class="legend-item"><span class="legend-color-dot" style="background-color: #7c3aed;"></span> Repositories / Projects</div>
+                <div class="legend-item"><span class="legend-color-dot" style="background-color: #059669;"></span> Competencies & Skills</div>
+                <div class="legend-item"><span class="legend-color-dot" style="background-color: #e11d48;"></span> AI Agent Interview Consensus</div>
+              </div>
+            </div>
+
+            <!-- Node Inspector -->
+            <div class="graph-inspector-panel">
+              <div class="inspector-title">Evidence Inspector</div>
+              <div id="nodeInspectorContent">
+                <p style="color: #64748b; font-size: 0.85rem;">Click any node in the evidence graph to inspect verifiable platform metrics and code proof.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: DEVELOPER INTELLIGENCE (Slide 3 & 5) -->
+        <div class="tab-pane" id="tab-developer">
+          <div class="dev-metrics-grid">
+            <div class="metric-box">
+              <div class="metric-header">Repository Quality Score</div>
+              <div class="metric-value-row">
+                <span class="metric-big-num" id="devQualityScore">--</span>
+                <span class="metric-badge" style="background-color:#e0e7ff; color:#4338ca;">Top 4%</span>
+              </div>
+              <div class="progress-track"><div class="progress-bar-fill" id="devQualityProgress"></div></div>
+            </div>
+
+            <div class="metric-box">
+              <div class="metric-header">Architecture & Design Index</div>
+              <div class="metric-value-row">
+                <span class="metric-big-num" id="devArchIndex">--</span>
+                <span class="metric-badge" style="background-color:#ede9fe; color:#7c3aed;">Enterprise</span>
+              </div>
+              <div class="progress-track"><div class="progress-bar-fill" id="devArchProgress"></div></div>
+            </div>
+
+            <div class="metric-box">
+              <div class="metric-header">Testing & CI/CD Coverage</div>
+              <div class="metric-value-row">
+                <span class="metric-big-num" id="devTestCoverage">--</span>
+                <span class="metric-badge" style="background-color:#d1fae5; color:#059669;">Verified CI</span>
+              </div>
+              <div class="progress-track"><div class="progress-bar-fill" id="devTestProgress"></div></div>
+            </div>
+
+            <div class="metric-box">
+              <div class="metric-header">Commit Consistency Cadence</div>
+              <div class="metric-value-row">
+                <span class="metric-big-num" id="devCommitCadence">--</span>
+                <span class="metric-badge" style="background-color:#fef3c7; color:#d97706;">High Velocity</span>
+              </div>
+              <div class="progress-track"><div class="progress-bar-fill" id="devCommitProgress"></div></div>
+            </div>
+          </div>
+
+          <div class="role-eval-layout" style="margin-bottom: 1.5rem;">
+            <div class="solid-card">
+              <div class="card-title-row">
+                <div class="card-title">Language Distribution (GitHub Analysis)</div>
+              </div>
+              <div style="height: 240px; position: relative;">
+                <canvas id="languageDonutChart"></canvas>
+              </div>
+            </div>
+
+            <div class="solid-card">
+              <div class="card-title-row">
+                <div class="card-title">Code Complexity & Documentation Quality</div>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:1rem;">
+                <div>
+                  <div style="font-size:0.78rem; font-weight:700; color:#64748b; text-transform:uppercase;">Architectural Pattern Classification</div>
+                  <div id="devComplexityText" style="font-size:0.95rem; font-weight:700; color:#0f172a; margin-top:0.25rem;">--</div>
+                </div>
+                <div>
+                  <div style="font-size:0.78rem; font-weight:700; color:#64748b; text-transform:uppercase;">Documentation & Observability Level</div>
+                  <div id="devDocsText" style="font-size:0.95rem; font-weight:700; color:#0f172a; margin-top:0.25rem;">--</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="solid-card">
+            <div class="card-title-row">
+              <div class="card-title">Verified Production Repositories & Evidence</div>
+              <span class="card-title-badge" style="background-color:#e0e7ff; color:#4338ca;">AST & Commit Parsed</span>
+            </div>
+            <div class="repo-list-container" id="devRepoList">
+              <!-- Dynamically rendered -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: ROLE-ADAPTIVE EVALUATION (Slide 3, 5, 6) -->
+        <div class="tab-pane" id="tab-role-eval">
+          <div class="role-eval-layout">
+            <div class="solid-card">
+              <div class="card-title-row">
+                <div class="card-title">Competency Radar vs Pool Median</div>
+                <span class="card-title-badge" style="background-color:#d1fae5; color:#059669;">Normalized 0-100</span>
+              </div>
+              <div class="radar-chart-container">
+                <canvas id="roleRadarChart"></canvas>
+              </div>
+            </div>
+
+            <div class="solid-card">
+              <div class="card-title-row">
+                <div class="card-title">Role Fit Breakdown & Weights</div>
+                <span class="match-pill emerald" id="roleEvalVerdictBadge">STRONG HIRE</span>
+              </div>
+              <div style="margin-bottom: 1rem; display:flex; gap:1.5rem;">
+                <div>
+                  <div style="font-size:0.75rem; color:#64748b; font-weight:700;">TARGET ROLE</div>
+                  <div style="font-size:1.05rem; font-weight:800; color:#4338ca;" id="roleEvalRoleName">Backend Engineer</div>
+                </div>
+                <div>
+                  <div style="font-size:0.75rem; color:#64748b; font-weight:700;">MATCH SCORE</div>
+                  <div style="font-size:1.05rem; font-weight:800; color:#059669;" id="roleEvalMatchScore">--%</div>
+                </div>
+                <div>
+                  <div style="font-size:0.75rem; color:#64748b; font-weight:700;">BENCHMARK PERCENTILE</div>
+                  <div style="font-size:1.05rem; font-weight:800; color:#0f172a;" id="roleEvalPercentile">--</div>
+                </div>
+              </div>
+
+              <table class="weights-table">
+                <thead>
+                  <tr>
+                    <th>Competency</th>
+                    <th>Weight</th>
+                    <th>Demonstrated Score</th>
+                    <th>Weighted Pts</th>
+                  </tr>
+                </thead>
+                <tbody id="roleWeightsTableBody">
+                  <!-- Dynamically rendered -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: AI MULTI-AGENT INTERVIEW PANEL (Slide 3, 4, 5) -->
+        <div class="tab-pane" id="tab-interview">
+          <div class="agent-cards-row">
+            <!-- Alex Tech Lead -->
+            <div class="agent-persona-card alex">
+              <div class="agent-card-header">
+                <div class="agent-avatar-circle">🤖</div>
+                <div class="agent-info">
+                  <h4>Alex</h4>
+                  <p>Tech Lead Agent</p>
+                </div>
+              </div>
+              <div class="agent-score-banner">
+                <span style="font-size:0.78rem; font-weight:700; color:#64748b;">EVALUATION SCORE</span>
+                <span class="agent-score-val" id="alexScore">--%</span>
+              </div>
+              <div style="font-size:0.8rem; font-weight:800; color:#1d4ed8; margin-bottom:0.4rem;" id="alexVerdict">--</div>
+              <div class="agent-notes-box" id="alexNotes">--</div>
+            </div>
+
+            <!-- Elena System Architect -->
+            <div class="agent-persona-card elena">
+              <div class="agent-card-header">
+                <div class="agent-avatar-circle">🏛️</div>
+                <div class="agent-info">
+                  <h4>Elena</h4>
+                  <p>System Architect Agent</p>
+                </div>
+              </div>
+              <div class="agent-score-banner">
+                <span style="font-size:0.78rem; font-weight:700; color:#64748b;">EVALUATION SCORE</span>
+                <span class="agent-score-val" id="elenaScore">--%</span>
+              </div>
+              <div style="font-size:0.8rem; font-weight:800; color:#7c3aed; margin-bottom:0.4rem;" id="elenaVerdict">--</div>
+              <div class="agent-notes-box" id="elenaNotes">--</div>
+            </div>
+
+            <!-- Marcus Behavioral -->
+            <div class="agent-persona-card marcus">
+              <div class="agent-card-header">
+                <div class="agent-avatar-circle">🤝</div>
+                <div class="agent-info">
+                  <h4>Marcus</h4>
+                  <p>Behavioral & Culture Agent</p>
+                </div>
+              </div>
+              <div class="agent-score-banner">
+                <span style="font-size:0.78rem; font-weight:700; color:#64748b;">EVALUATION SCORE</span>
+                <span class="agent-score-val" id="marcusScore">--%</span>
+              </div>
+              <div style="font-size:0.8rem; font-weight:800; color:#059669; margin-bottom:0.4rem;" id="marcusVerdict">--</div>
+              <div class="agent-notes-box" id="marcusNotes">--</div>
+            </div>
+          </div>
+
+          <div class="solid-card">
+            <div class="card-title-row">
+              <div class="card-title">Live AI Panel Defense Transcript</div>
+              <button class="btn-secondary" id="btnSimulateInterview">
+                ⚡ Run Live Interview Simulation
+              </button>
+            </div>
+            <div class="chat-transcript-box" id="interviewChatTranscript">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: EXPLAINABLE HIRING REPORT (Slide 3, 5, 7) -->
+        <div class="tab-pane" id="tab-report">
+          <div class="report-header-banner">
+            <div>
+              <div style="font-size:0.8rem; font-weight:700; color:#64748b; text-transform:uppercase;">SYNTHESIZED HIRING RECOMMENDATION</div>
+              <div style="font-size:1.6rem; font-weight:900; color:#0f172a; margin-top:0.25rem;">Hiring Intelligence Dossier</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:1rem;">
+              <span class="verdict-large-badge emerald" id="reportVerdictBadge">STRONG HIRE</span>
+              <button class="btn-secondary" id="btnPrintReport">🖨️ Export PDF / Print</button>
+            </div>
+          </div>
+
+          <div class="solid-card">
+            <div class="report-section">
+              <div class="report-section-title">Executive Summary</div>
+              <div class="report-summary-box" id="reportSummaryText">--</div>
+            </div>
+
+            <div style="display:flex; gap:1.5rem; margin-bottom: 1.5rem;">
+              <div class="hero-stat-card" style="flex:1;">
+                <div class="stat-value" id="reportMatchScore">--%</div>
+                <div class="stat-label">Calculated Role Match</div>
+              </div>
+              <div class="hero-stat-card" style="flex:1;">
+                <div class="stat-value" id="reportConfidenceScore">--%</div>
+                <div class="stat-label">AI Consensus Confidence</div>
+              </div>
+            </div>
+
+            <div class="report-section">
+              <div class="report-section-title">Key Strengths (Verified with Project Proof)</div>
+              <div class="strengths-grid" id="reportStrengthsList">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+
+            <div class="report-section">
+              <div class="report-section-title">Potential Risks & Focus Areas</div>
+              <div class="strengths-grid" id="reportRisksList">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+
+            <div class="report-section">
+              <div class="report-section-title">Suggested Deep-Dive Interview Follow-Up</div>
+              <div class="report-summary-box" style="border-left-color: #d97706; background-color: #fffbeb;" id="reportFollowUpText">--</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 6: APPLICANT POOL BENCHMARKING (Slide 3 & 5) -->
+        <div class="tab-pane" id="tab-benchmarks">
+          <div class="solid-card">
+            <div class="card-title-row">
+              <div class="card-title">Applicant Pool Distribution (<span id="benchmarkRoleTitle">Role</span>)</div>
+              <span class="card-title-badge" style="background-color:#fef3c7; color:#d97706;" id="benchmarkPoolSize">1,240 Applicants</span>
+            </div>
+            <div class="benchmark-chart-box">
+              <canvas id="benchmarkBellCurveChart"></canvas>
+            </div>
+          </div>
+
+          <div class="solid-card">
+            <div class="card-title-row">
+              <div class="card-title">Comparative Ranking Table</div>
+            </div>
+            <table class="weights-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Candidate</th>
+                  <th>Role Match</th>
+                  <th>Pool Percentile</th>
+                  <th>Test Coverage</th>
+                  <th>Arch Index</th>
+                  <th>LeetCode Solved</th>
+                </tr>
+              </thead>
+              <tbody id="benchmarkTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Ingest Candidate Modal (Multi-Agent Pipeline) -->
+  <div class="modal-overlay" id="ingestModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Ingest Candidate via Multi-Agent AI Pipeline</h3>
+        <button id="btnCloseModal" style="background:none; border:none; font-size:1.25rem; cursor:pointer;">✕</button>
+      </div>
+
+      <form id="ingestCandidateForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="inputName">Full Name *</label>
+            <input type="text" id="inputName" required placeholder="e.g. Sanya Sharma" />
+          </div>
+
+          <div class="form-group">
+            <label for="inputTargetRole">Target Role *</label>
+            <select id="inputTargetRole">
+              <option value="backend-engineer">Backend / Distributed Systems</option>
+              <option value="aiml-engineer">AI / Machine Learning Engineer</option>
+              <option value="fullstack-engineer">Full-Stack Software Engineer</option>
+              <option value="frontend-engineer">Frontend & UI/UX Architect</option>
+              <option value="product-lead">Product & Engineering Lead</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="inputGithub">GitHub Handle *</label>
+            <input type="text" id="inputGithub" required placeholder="e.g. sanya-codes" />
+          </div>
+
+          <div class="form-group">
+            <label for="inputLeetcode">LeetCode Handle</label>
+            <input type="text" id="inputLeetcode" placeholder="e.g. sanya_algo" />
+          </div>
+
+          <div class="form-group">
+            <label for="inputLinkedin">LinkedIn Handle</label>
+            <input type="text" id="inputLinkedin" placeholder="e.g. sanya-sharma-dev" />
+          </div>
+
+          <div class="form-group">
+            <label for="inputPortfolio">Personal Portfolio URL</label>
+            <input type="url" id="inputPortfolio" placeholder="https://sanyasharma.dev" />
+          </div>
+
+          <!-- Live Agent Pipeline Status Animation -->
+          <div class="agent-pipeline-status" id="agentPipelineStatus">
+            <div class="agent-step-item" id="step-ingestion">
+              <span>🌐</span> Platform Ingestion Agent: Harvesting GitHub, LeetCode, and Portfolio...
+            </div>
+            <div class="agent-step-item" id="step-repo">
+              <span>📁</span> Repository Intelligence Agent: Analyzing code complexity, AST & tests...
+            </div>
+            <div class="agent-step-item" id="step-comp">
+              <span>⚖️</span> Competency Mapping Agent: Calibrating role weights & radar vectors...
+            </div>
+            <div class="agent-step-item" id="step-interview">
+              <span>🤖</span> AI Multi-Agent Panel: Alex, Elena & Marcus staging technical defense...
+            </div>
+            <div class="agent-step-item" id="step-report">
+              <span>📄</span> Recommendation Agent: Synthesizing explainable hiring dossier...
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" onclick="document.getElementById('ingestModal').classList.remove('active')">Cancel</button>
+          <button type="submit" class="btn-primary" id="btnSubmitIngest">Execute Ingestion Pipeline</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/graph.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

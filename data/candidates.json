@@ -1,0 +1,1132 @@
+{
+  "candidates": [
+    {
+      "id": "cand-5460",
+      "name": "Tanvi Sharma",
+      "title": "Backend Engineer Specialist",
+      "avatar": "https://images.unsplash.com/photo-1535713875002?w=150&auto=format&fit=crop&q=80",
+      "location": "Bengaluru / Remote",
+      "yearsExperience": 3.2,
+      "primaryRole": "backend-engineer",
+      "status": "Available / High Fit",
+      "platforms": {
+        "github": {
+          "handle": "tanvi-sharma-backend",
+          "url": "https://github.com/tanvi-sharma-backend",
+          "verified": true,
+          "publicRepos": 24,
+          "totalStars": 149,
+          "totalCommitsLastYear": 957,
+          "streakDays": 27,
+          "languages": [
+            {
+              "name": "TypeScript",
+              "percentage": 42
+            },
+            {
+              "name": "Go",
+              "percentage": 32
+            },
+            {
+              "name": "Python",
+              "percentage": 26
+            }
+          ],
+          "topRepositories": [
+            {
+              "name": "tanvi-sharma-backend-distributed-cache",
+              "description": "High performance LRU distributed cache with consistent hashing and gRPC endpoints",
+              "stars": 44,
+              "forks": 14,
+              "language": "Go",
+              "testCoverage": 82,
+              "hasCI": true,
+              "architectureScore": 96,
+              "verifiedEvidence": "Consistent hash ring with virtual nodes; benchmarking verified 85k ops/sec at sub-5ms p99."
+            },
+            {
+              "name": "tanvi-sharma-backend-sql-query-analyzer",
+              "description": "Automated index recommendation engine analyzing PostgreSQL slow-query logs",
+              "stars": 50,
+              "forks": 15,
+              "language": "Rust",
+              "testCoverage": 82,
+              "hasCI": true,
+              "architectureScore": 87,
+              "verifiedEvidence": "AST parser for PostgreSQL queries identifying missing composite indices and table scans."
+            }
+          ]
+        },
+        "leetcode": {
+          "handle": "tanvi_algo",
+          "url": "https://leetcode.com/tanvi_algo",
+          "verified": true,
+          "solvedTotal": 426,
+          "easy": 129,
+          "medium": 234,
+          "hard": 63,
+          "contestRating": 1910,
+          "rankingPercentile": 96.1,
+          "badges": [
+            "Knight",
+            "100 Days Badge"
+          ]
+        },
+        "linkedin": {
+          "handle": "tanvi-sharma-dev",
+          "url": "https://linkedin.com/in/tanvi-sharma-dev",
+          "verified": true,
+          "endorsements": 35,
+          "verifiedTenure": "2.5 - 4 yrs in Software Engineering",
+          "recommendations": 6
+        },
+        "portfolio": null
+      },
+      "developerIntelligence": {
+        "repoQualityScore": 85,
+        "languageDiversity": 88,
+        "architectureIndex": 92,
+        "testingCoverage": 82,
+        "commitCadence": 88,
+        "authenticContributionRate": 91,
+        "codeComplexity": "Modular Services with CI/CD & Static Typing",
+        "documentationQuality": "High (Architectural Specs, API Documentation & Benchmarks)"
+      },
+      "competencies": {
+        "system_design": 92,
+        "code_quality": 85,
+        "algorithmic_skills": 85,
+        "architecture": 92,
+        "collaboration": 85.5,
+        "domain_expertise": 89
+      },
+      "percentileBenchmarking": {
+        "overallPercentile": 93,
+        "poolSize": 1240,
+        "systemDesignRank": 37,
+        "codeQualityRank": 20,
+        "algorithmsRank": 20,
+        "architectureRank": 43
+      },
+      "interviewPanel": {
+        "completed": true,
+        "overallScore": 93,
+        "timestamp": "2026-10-22T16:51:25.460Z",
+        "agents": {
+          "alex_tech_lead": {
+            "name": "Alex",
+            "role": "Tech Lead Agent",
+            "focus": "Clean Code, Runtime Internals, Algorithmic Execution",
+            "score": 93,
+            "verdict": "Deep Language Mastery",
+            "feedback": "Clear understanding of runtime internals, zero-allocation slicing, and memory barriers."
+          },
+          "elena_architect": {
+            "name": "Elena",
+            "role": "System Architect Agent",
+            "focus": "Distributed Systems, High Availability, Scale",
+            "score": 94,
+            "verdict": "Exceptional Architectural Rigor",
+            "feedback": "Candidate demonstrated immediate grasp of CAP trade-offs and linearizable read leases."
+          },
+          "marcus_behavioral": {
+            "name": "Marcus",
+            "role": "Behavioral & Culture Agent",
+            "focus": "Ownership, Stakeholder Empathy, Conflict Resolution",
+            "score": 91,
+            "verdict": "High Empathy & Pragmatism",
+            "feedback": "High maturity; converted engineering concerns into business value without adversarial confrontation."
+          }
+        },
+        "transcript": [
+          {
+            "speaker": "Elena (System Architect Agent)",
+            "avatar": "🏛️",
+            "message": "In your 'tanvi-sharma-backend-distributed-cache' repository, how did you handle data replication consistency vs availability during network partition events?"
+          },
+          {
+            "speaker": "Tanvi Sharma",
+            "avatar": "👩‍💻",
+            "message": "I leveraged a quorum-based consensus protocol where writes require majority ack before commit confirmation. During partial partitions, minority nodes immediately step down to read-only follower mode to prevent dirty split-brain states."
+          },
+          {
+            "speaker": "Alex (Tech Lead Agent)",
+            "avatar": "🤖",
+            "message": "Looking at your Go implementation, what profiling techniques did you employ to prevent garbage collection pauses under heavy write loads?"
+          },
+          {
+            "speaker": "Tanvi Sharma",
+            "avatar": "👩‍💻",
+            "message": "I utilized sync.Pool allocation pooling for byte buffers and pre-allocated slice capacities, keeping heap allocations to zero on the critical request pipeline. Continuous pprof profiling verified 99.9% of memory remained off the GC scan path."
+          },
+          {
+            "speaker": "Marcus (Behavioral & Culture Agent)",
+            "avatar": "🤝",
+            "message": "Describe a situation where you strongly disagreed with a product manager's technical timeline. How did you resolve the trade-off?"
+          },
+          {
+            "speaker": "Tanvi Sharma",
+            "avatar": "👩‍💻",
+            "message": "I translated our technical debt risk into concrete customer impact metrics—calculating that skipping integration tests would lead to an estimated 14% higher incident rate during flash sales. We agreed on an MVP phase-1 launch with automated canary rollouts, followed by full feature release."
+          }
+        ]
+      },
+      "explainableReport": {
+        "verdict": "HIRE",
+        "verdictColor": "emerald",
+        "matchScore": 89,
+        "confidence": 99,
+        "executiveSummary": "Tanvi Sharma demonstrates validated, evidence-based technical capability aligning with BACKEND ENGINEER. Verified through 'tanvi-sharma-backend-distributed-cache' (82% test coverage), 426 solved problems on LeetCode (96.1th percentile), and collaborative defense during the AI Multi-Agent Interview Panel (93% score). Ranked among the top percentiles of the applicant pool with zero resume embellishment detected.",
+        "keyStrengths": [
+          "Demonstrated software craft in Go with 82% test coverage and continuous integration.",
+          "Validated problem-solving agility with 426 algorithmic solutions.",
+          "Cohesive architectural defense vetted by System Architect Agent Elena (94% score).",
+          "High team collaboration velocity reflected in 27+ day commit consistency."
+        ],
+        "redFlagsAndRisks": [
+          "Fast-paced delivery profile; verify team preferences on asynchronous documentation vs synchronous pair programming."
+        ],
+        "suggestedFollowUp": "Explore the candidate's preferred engineering mentorship cadence and vision for scaling distributed services under heavy concurrency."
+      }
+    },
+    {
+      "id": "cand-001",
+      "name": "Prachi Aggarwal",
+      "title": "Senior Backend & Distributed Systems Engineer",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
+      "location": "Bengaluru, India",
+      "yearsExperience": 4.5,
+      "primaryRole": "backend-engineer",
+      "status": "Available / High Fit",
+      "platforms": {
+        "github": {
+          "handle": "prachi-aggarwal",
+          "url": "https://github.com/prachi-aggarwal",
+          "verified": true,
+          "publicRepos": 42,
+          "totalStars": 384,
+          "totalCommitsLastYear": 1280,
+          "streakDays": 64,
+          "languages": [
+            {
+              "name": "Go",
+              "percentage": 48
+            },
+            {
+              "name": "Rust",
+              "percentage": 26
+            },
+            {
+              "name": "TypeScript",
+              "percentage": 16
+            },
+            {
+              "name": "Python",
+              "percentage": 10
+            }
+          ],
+          "topRepositories": [
+            {
+              "name": "raft-kv-diststore",
+              "description": "High-throughput distributed in-memory key-value store with Raft consensus in Go",
+              "stars": 245,
+              "forks": 42,
+              "language": "Go",
+              "testCoverage": 91,
+              "hasCI": true,
+              "architectureScore": 94,
+              "verifiedEvidence": "Implemented linearizable reads, snapshotting, and leader election with zero split-brain incidents in benchmark suite."
+            },
+            {
+              "name": "micro-gateway-rs",
+              "description": "Blazing fast asynchronous API Gateway with rate limiting, JWT validation & circuit breaker",
+              "stars": 88,
+              "forks": 14,
+              "language": "Rust",
+              "testCoverage": 88,
+              "hasCI": true,
+              "architectureScore": 92,
+              "verifiedEvidence": "Zero-allocation HTTP request router using Tokio and Tower middleware; handles 120k req/sec on 4 cores."
+            },
+            {
+              "name": "event-stream-cdc",
+              "description": "Change Data Capture (CDC) pipeline streaming PostgreSQL WAL logs to Kafka",
+              "stars": 51,
+              "forks": 9,
+              "language": "Go",
+              "testCoverage": 84,
+              "hasCI": true,
+              "architectureScore": 89,
+              "verifiedEvidence": "Built transactional outbox consumer with sub-10ms latency and exactly-once processing guarantees."
+            }
+          ]
+        },
+        "leetcode": {
+          "handle": "prachi_agg",
+          "url": "https://leetcode.com/prachi_agg",
+          "verified": true,
+          "solvedTotal": 640,
+          "easy": 190,
+          "medium": 360,
+          "hard": 90,
+          "contestRating": 2145,
+          "rankingPercentile": 98.2,
+          "badges": [
+            "Guardian",
+            "Knight",
+            "Annual 100 Days Badge"
+          ]
+        },
+        "linkedin": {
+          "handle": "prachi-aggarwal-tech",
+          "url": "https://linkedin.com/in/prachi-aggarwal-tech",
+          "verified": true,
+          "endorsements": 84,
+          "verifiedTenure": "3.5 yrs at Hyperscale FinTech",
+          "recommendations": 6
+        },
+        "portfolio": {
+          "url": "https://prachiaggarwal.dev",
+          "verified": true,
+          "techStack": [
+            "Next.js",
+            "TailwindCSS",
+            "Cloudflare Workers"
+          ]
+        }
+      },
+      "developerIntelligence": {
+        "repoQualityScore": 93,
+        "languageDiversity": 88,
+        "architectureIndex": 94,
+        "testingCoverage": 89,
+        "commitCadence": 96,
+        "authenticContributionRate": 97,
+        "codeComplexity": "Advanced / Microservices & Systems",
+        "documentationQuality": "Comprehensive (Architectural ADRs, OpenTelemetry tracing docs)"
+      },
+      "competencies": {
+        "system_design": 96,
+        "code_quality": 92,
+        "algorithmic_skills": 95,
+        "architecture": 94,
+        "collaboration": 88,
+        "domain_expertise": 91
+      },
+      "percentileBenchmarking": {
+        "overallPercentile": 97.4,
+        "poolSize": 1240,
+        "systemDesignRank": 14,
+        "codeQualityRank": 28,
+        "algorithmsRank": 22,
+        "architectureRank": 18
+      },
+      "interviewPanel": {
+        "completed": true,
+        "overallScore": 93,
+        "timestamp": "2026-10-20T14:30:00Z",
+        "agents": {
+          "alex_tech_lead": {
+            "name": "Alex",
+            "role": "Tech Lead Agent",
+            "focus": "Clean Code, Algorithmic Rigor, Concurrency",
+            "score": 95,
+            "verdict": "Exceptional",
+            "feedback": "Demonstrated deep mastery of Go channels, mutex lock contention profiling, and memory alignment. Code in real-time pairing was modular and idiomatic."
+          },
+          "elena_architect": {
+            "name": "Elena",
+            "role": "System Architect Agent",
+            "focus": "Scalability, Distributed State, Fault Tolerance",
+            "score": 94,
+            "verdict": "Outstanding",
+            "feedback": "Flawlessly explained partition tolerance in Raft consensus. When questioned on split-brain scenarios and network partitions, she outlined lease reads and quorum heartbeats effortlessly."
+          },
+          "marcus_behavioral": {
+            "name": "Marcus",
+            "role": "Behavioral & Culture Agent",
+            "focus": "Collaboration, Conflict Resolution, Ownership",
+            "score": 90,
+            "verdict": "Strong Alignment",
+            "feedback": "Shared concrete instances of mentoring junior engineers on post-mortem documentation and conducting egoless PR reviews. Clear communication under pressure."
+          }
+        },
+        "transcript": [
+          {
+            "speaker": "Elena (System Architect)",
+            "avatar": "🏛️",
+            "message": "Prachi, looking at your 'raft-kv-diststore' repo, how do you handle leader leases during network partitions to prevent stale read anomalies?"
+          },
+          {
+            "speaker": "Prachi Aggarwal",
+            "avatar": "👩‍💻",
+            "message": "I implemented leader lease read mechanisms where the leader maintains a bounded physical clock lease verified via periodic heartbeats to a majority quorum. If clock drift exceeds the threshold, reads fallback to full log roundtrips to ensure linearizability."
+          },
+          {
+            "speaker": "Alex (Tech Lead)",
+            "avatar": "🤖",
+            "message": "In your Rust micro-gateway, how did you avoid buffer copying overhead on 120k requests/second?"
+          },
+          {
+            "speaker": "Prachi Aggarwal",
+            "avatar": "👩‍💻",
+            "message": "By leveraging `bytes::Bytes` slicing with ref-counted zero-copy buffers and pinning socket threads with Tokio runtime thread pools, avoiding heap allocations in the hot request-response path."
+          },
+          {
+            "speaker": "Marcus (Behavioral)",
+            "avatar": "🤝",
+            "message": "Tell me about a time a production incident was caused by a service you owned. How did you handle stakeholder communications?"
+          },
+          {
+            "speaker": "Prachi Aggarwal",
+            "avatar": "👩‍💻",
+            "message": "During a database failover test, our connection pool drained unexpectedly. I immediately spun up a status bridge, communicated incident status every 15 minutes to product teams, initiated circuit breakers to degrade gracefully, and subsequently authored a blameless post-mortem with automated canary assertions."
+          }
+        ]
+      },
+      "explainableReport": {
+        "verdict": "STRONG HIRE",
+        "verdictColor": "emerald",
+        "matchScore": 94,
+        "confidence": 98,
+        "executiveSummary": "Prachi Aggarwal is an elite backend and distributed systems engineer ranked in the top 3% of candidates. Her demonstrated capability is heavily verified through 42 production-grade GitHub repositories (notably raft-kv-diststore with 91% test coverage), Guardian tier LeetCode contest rating (2145), and unanimous high ratings from all three AI Interview Agents.",
+        "keyStrengths": [
+          "Demonstrated Raft consensus and distributed systems implementation backed by working source code and passing benchmarks.",
+          "High code quality standards with 89%+ test coverage and active CI/CD automation across repositories.",
+          "Exceptional algorithmic problem-solving speed (640 solved, Knight/Guardian tier 98.2 percentile).",
+          "Calm, structured incident response and clear architectural communication."
+        ],
+        "redFlagsAndRisks": [
+          "Less frontend visual showcase (primarily backend/infrastructure focused; perfectly aligned for backend/systems role)."
+        ],
+        "suggestedFollowUp": "Assess willingness to take on technical team lead responsibilities and cross-service data privacy governance."
+      }
+    },
+    {
+      "id": "cand-002",
+      "name": "Sanchika Rao",
+      "title": "AI / Machine Learning Engineer & Agent Architect",
+      "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+      "location": "Hyderabad, India",
+      "yearsExperience": 3.8,
+      "primaryRole": "aiml-engineer",
+      "status": "Available / High Fit",
+      "platforms": {
+        "github": {
+          "handle": "sanchika-rao-ai",
+          "url": "https://github.com/sanchika-rao-ai",
+          "verified": true,
+          "publicRepos": 36,
+          "totalStars": 512,
+          "totalCommitsLastYear": 1420,
+          "streakDays": 82,
+          "languages": [
+            {
+              "name": "Python",
+              "percentage": 64
+            },
+            {
+              "name": "CUDA/C++",
+              "percentage": 18
+            },
+            {
+              "name": "TypeScript",
+              "percentage": 12
+            },
+            {
+              "name": "Shell",
+              "percentage": 6
+            }
+          ],
+          "topRepositories": [
+            {
+              "name": "agentic-rag-engine",
+              "description": "Multi-agent autonomous retrieval system with LangGraph, hybrid sparse-dense vector search & re-ranking",
+              "stars": 340,
+              "forks": 65,
+              "language": "Python",
+              "testCoverage": 87,
+              "hasCI": true,
+              "architectureScore": 96,
+              "verifiedEvidence": "Built multi-agent reflection loop reducing hallucination rate by 42% on legal & financial question-answering benchmark."
+            },
+            {
+              "name": "llama3-quant-optimizer",
+              "description": "AWQ and bitsandbytes 4-bit quantization kernels with flash-attention integration for edge inference",
+              "stars": 128,
+              "forks": 23,
+              "language": "Python",
+              "testCoverage": 83,
+              "hasCI": true,
+              "architectureScore": 91,
+              "verifiedEvidence": "Demonstrated 2.8x inference speedup with negligible perplexity degradation (<0.04) on MMLU."
+            }
+          ]
+        },
+        "leetcode": {
+          "handle": "sanchika_ai",
+          "url": "https://leetcode.com/sanchika_ai",
+          "verified": true,
+          "solvedTotal": 450,
+          "easy": 140,
+          "medium": 240,
+          "hard": 70,
+          "contestRating": 1920,
+          "rankingPercentile": 92.4,
+          "badges": [
+            "Knight",
+            "Top 8% Contests"
+          ]
+        },
+        "kaggle": {
+          "handle": "sanchika_r",
+          "url": "https://kaggle.com/sanchika_r",
+          "verified": true,
+          "rank": "Kaggle Expert (Top 2%)",
+          "medals": "2 Gold, 3 Silver in NLP & Computer Vision competitions"
+        },
+        "portfolio": {
+          "url": "https://sanchika-research.ai",
+          "verified": true,
+          "techStack": [
+            "Streamlit",
+            "HuggingFace Spaces",
+            "FastAPI"
+          ]
+        }
+      },
+      "developerIntelligence": {
+        "repoQualityScore": 95,
+        "languageDiversity": 82,
+        "architectureIndex": 93,
+        "testingCoverage": 86,
+        "commitCadence": 98,
+        "authenticContributionRate": 99,
+        "codeComplexity": "Deep Learning / Tensor Math & Multi-Agent DAGs",
+        "documentationQuality": "Exemplary (Jupyter tutorials, benchmark metrics, model cards)"
+      },
+      "competencies": {
+        "system_design": 91,
+        "code_quality": 93,
+        "algorithmic_skills": 90,
+        "architecture": 92,
+        "collaboration": 90,
+        "domain_expertise": 98
+      },
+      "percentileBenchmarking": {
+        "overallPercentile": 96.8,
+        "poolSize": 1240,
+        "systemDesignRank": 34,
+        "codeQualityRank": 21,
+        "algorithmsRank": 45,
+        "architectureRank": 25
+      },
+      "interviewPanel": {
+        "completed": true,
+        "overallScore": 95,
+        "timestamp": "2026-10-21T11:00:00Z",
+        "agents": {
+          "alex_tech_lead": {
+            "name": "Alex",
+            "role": "Tech Lead Agent",
+            "focus": "Clean Code, Python Concurrency, CUDA Memory",
+            "score": 93,
+            "verdict": "Very High",
+            "feedback": "Deep knowledge of PyTorch autograd internals, gradient accumulation, and multi-GPU distributed data parallel (DDP)."
+          },
+          "elena_architect": {
+            "name": "Elena",
+            "role": "System Architect Agent",
+            "focus": "Vector Database Sharding, RAG Latency, LLM Serving",
+            "score": 96,
+            "verdict": "Exceptional",
+            "feedback": "Superb understanding of Milvus/Qdrant vector clustering, HNSW index parameters, and token streaming throughput optimization."
+          },
+          "marcus_behavioral": {
+            "name": "Marcus",
+            "role": "Behavioral & Culture Agent",
+            "focus": "AI Ethics, Research-to-Production Velocity, Team Culture",
+            "score": 94,
+            "verdict": "Strong Alignment",
+            "feedback": "Deep commitment to guardrails, bias detection, and cross-functional empathy with non-technical stakeholders."
+          }
+        },
+        "transcript": [
+          {
+            "speaker": "Elena (System Architect)",
+            "avatar": "🏛️",
+            "message": "Sanchika, in your agentic RAG architecture, how do you prevent cascading query divergence when agents enter cyclic critique loops?"
+          },
+          {
+            "speaker": "Sanchika Rao",
+            "avatar": "👩‍🔬",
+            "message": "I enforce a bounded LangGraph DAG with a maximum depth limit (default 3) and a heuristic convergence score based on semantic delta between successive candidate responses. If delta falls under 0.05, the supervisor node triggers early stopping."
+          },
+          {
+            "speaker": "Alex (Tech Lead)",
+            "avatar": "🤖",
+            "message": "When serving 4-bit quantized models, what memory bottleneck do you observe first during concurrent batched generation?"
+          },
+          {
+            "speaker": "Sanchika Rao",
+            "avatar": "👩‍🔬",
+            "message": "The KV-cache memory footprints become the primary limiter as context windows grow to 8k+ tokens. I solved this by implementing PagedAttention (vLLM style) to eliminate virtual memory fragmentation and enable contiguous memory blocks."
+          }
+        ]
+      },
+      "explainableReport": {
+        "verdict": "STRONG HIRE",
+        "verdictColor": "emerald",
+        "matchScore": 96,
+        "confidence": 99,
+        "executiveSummary": "Sanchika Rao is a top-tier AI / Machine Learning Engineer with 96% match score for AI roles. Her capability is evidenced by 512 GitHub stars on autonomous agent architectures, Kaggle Expert ranking with 2 Gold medals, and deep technical grasp of production LLM serving.",
+        "keyStrengths": [
+          "State-of-the-art agentic RAG and LangGraph orchestration with proven hallucination reduction.",
+          "Quantization and CUDA kernel optimization for low-latency production inference.",
+          "Strong Kaggle competitive record demonstrating empirical model tuning mastery.",
+          "High documentation standards with reproducible Jupyter notebooks and model weights."
+        ],
+        "redFlagsAndRisks": [
+          "High demand profile; candidate may have multiple concurrent competitive offers."
+        ],
+        "suggestedFollowUp": "Discuss roadmap for custom enterprise model fine-tuning and proprietary multi-agent tool calling."
+      }
+    },
+    {
+      "id": "cand-003",
+      "name": "Samragyi Singh",
+      "title": "Lead Full-Stack & Cloud Architecture Engineer",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "location": "Pune, India",
+      "yearsExperience": 4,
+      "primaryRole": "fullstack-engineer",
+      "status": "Available / High Fit",
+      "platforms": {
+        "github": {
+          "handle": "samragyi-singh",
+          "url": "https://github.com/samragyi-singh",
+          "verified": true,
+          "publicRepos": 48,
+          "totalStars": 290,
+          "totalCommitsLastYear": 1150,
+          "streakDays": 58,
+          "languages": [
+            {
+              "name": "TypeScript",
+              "percentage": 42
+            },
+            {
+              "name": "Node.js",
+              "percentage": 30
+            },
+            {
+              "name": "React",
+              "percentage": 18
+            },
+            {
+              "name": "SQL/PostgreSQL",
+              "percentage": 10
+            }
+          ],
+          "topRepositories": [
+            {
+              "name": "collab-canvas-engine",
+              "description": "Real-time collaborative diagramming canvas with CRDT (Yjs), WebSockets, and optimistic updates",
+              "stars": 195,
+              "forks": 32,
+              "language": "TypeScript",
+              "testCoverage": 89,
+              "hasCI": true,
+              "architectureScore": 93,
+              "verifiedEvidence": "Zero state divergence across 50 concurrent client connections; sub-16ms render loop on canvas mutations."
+            },
+            {
+              "name": "saas-multitenant-core",
+              "description": "Production-ready Multi-tenant SaaS starter with row-level security (RLS), Stripe billing & audit logs",
+              "stars": 95,
+              "forks": 24,
+              "language": "TypeScript",
+              "testCoverage": 91,
+              "hasCI": true,
+              "architectureScore": 90,
+              "verifiedEvidence": "Tested schema isolation with PostgreSQL RLS policies; passed penetration security audit for tenant leakage."
+            }
+          ]
+        },
+        "leetcode": {
+          "handle": "samragyi_dev",
+          "url": "https://leetcode.com/samragyi_dev",
+          "verified": true,
+          "solvedTotal": 490,
+          "easy": 170,
+          "medium": 260,
+          "hard": 60,
+          "contestRating": 1880,
+          "rankingPercentile": 89.5,
+          "badges": [
+            "Knight",
+            "Consistently Active"
+          ]
+        },
+        "behance": {
+          "handle": "samragyi_ux",
+          "url": "https://behance.net/samragyi_ux",
+          "verified": true,
+          "projectCount": 8,
+          "appreciations": 420,
+          "featuredDesign": "Design Systems for Enterprise Data Dashboards"
+        },
+        "portfolio": {
+          "url": "https://samragyi.tech",
+          "verified": true,
+          "techStack": [
+            "Next.js 14",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Vercel"
+          ]
+        }
+      },
+      "developerIntelligence": {
+        "repoQualityScore": 91,
+        "languageDiversity": 90,
+        "architectureIndex": 92,
+        "testingCoverage": 90,
+        "commitCadence": 94,
+        "authenticContributionRate": 96,
+        "codeComplexity": "End-to-End Enterprise / WebSockets, CRDT & RLS",
+        "documentationQuality": "High (Live Storybook components, schema diagrams, e2e Playwright suites)"
+      },
+      "competencies": {
+        "system_design": 92,
+        "code_quality": 91,
+        "algorithmic_skills": 88,
+        "architecture": 93,
+        "collaboration": 94,
+        "domain_expertise": 92
+      },
+      "percentileBenchmarking": {
+        "overallPercentile": 94.2,
+        "poolSize": 1240,
+        "systemDesignRank": 42,
+        "codeQualityRank": 38,
+        "algorithmsRank": 68,
+        "architectureRank": 32
+      },
+      "interviewPanel": {
+        "completed": true,
+        "overallScore": 92,
+        "timestamp": "2026-10-19T16:00:00Z",
+        "agents": {
+          "alex_tech_lead": {
+            "name": "Alex",
+            "role": "Tech Lead Agent",
+            "focus": "Fullstack Types, React Performance, API Contracts",
+            "score": 92,
+            "verdict": "High",
+            "feedback": "Excellent handling of React 19 Server Components, Zod schema validation, and database transaction atomicity."
+          },
+          "elena_architect": {
+            "name": "Elena",
+            "role": "System Architect Agent",
+            "focus": "Multi-Tenancy, WebSocket Scalability, Redis Pub/Sub",
+            "score": 91,
+            "verdict": "Strong",
+            "feedback": "Explained horizontal scaling of WebSocket connections using Redis Adapter and sticky load balancing seamlessly."
+          },
+          "marcus_behavioral": {
+            "name": "Marcus",
+            "role": "Behavioral & Culture Agent",
+            "focus": "Designer-Developer Bridge, Agile Ownership",
+            "score": 95,
+            "verdict": "Exceptional",
+            "feedback": "Rare combination of UI design intuition (Behance recognized) and hardcore backend schema architecture. High empathy and team-first mindset."
+          }
+        },
+        "transcript": [
+          {
+            "speaker": "Elena (System Architect)",
+            "avatar": "🏛️",
+            "message": "Samragyi, when scaling real-time collaborative state using Yjs over WebSockets to multiple server instances, how do you handle partition recovery?"
+          },
+          {
+            "speaker": "Samragyi Singh",
+            "avatar": "👩‍💻",
+            "message": "I route room traffic via consistent hashing on room IDs to specific gateway nodes backed by Redis Pub/Sub channels. On disconnect, client state is re-synced using Yjs state vectors to transmit only missing diffs, minimizing network payload."
+          },
+          {
+            "speaker": "Alex (Tech Lead)",
+            "avatar": "🤖",
+            "message": "How do you guarantee that multi-tenant PostgreSQL RLS policies cannot be bypassed in an edge function?"
+          },
+          {
+            "speaker": "Samragyi Singh",
+            "avatar": "👩‍💻",
+            "message": "I enforce tenant context via session configuration (`SET LOCAL app.current_tenant_id`) within atomic transactions and ensure database connection pools never reuse connections with dirty session variables."
+          }
+        ]
+      },
+      "explainableReport": {
+        "verdict": "STRONG HIRE",
+        "verdictColor": "emerald",
+        "matchScore": 92,
+        "confidence": 97,
+        "executiveSummary": "Samragyi Singh is an accomplished Lead Full-Stack Engineer bridging high-fidelity UI design with battle-tested cloud architecture. Verified through 48 public repositories, active Behance portfolio, 90%+ test coverage, and high ratings across technical and cultural AI agent evaluations.",
+        "keyStrengths": [
+          "Mastery of real-time collaborative protocols (CRDTs, WebSockets, optimistic UI).",
+          "Production-grade security with multi-tenant PostgreSQL Row Level Security.",
+          "Strong UI aesthetic and design system craftsmanship (Behance featured).",
+          "High collaboration score with demonstrated experience leading design-dev handoffs."
+        ],
+        "redFlagsAndRisks": [
+          "None identified; balanced capabilities across both frontend and backend domains."
+        ],
+        "suggestedFollowUp": "Explore interest in driving cross-team design-system standardization and cloud micro-frontend migration."
+      }
+    },
+    {
+      "id": "cand-004",
+      "name": "Devansh Patel",
+      "title": "Senior Frontend & Web Performance Architect",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "location": "Mumbai, India",
+      "yearsExperience": 5.2,
+      "primaryRole": "frontend-engineer",
+      "status": "Available / High Fit",
+      "platforms": {
+        "github": {
+          "handle": "devansh-patel-ui",
+          "url": "https://github.com/devansh-patel-ui",
+          "verified": true,
+          "publicRepos": 29,
+          "totalStars": 410,
+          "totalCommitsLastYear": 980,
+          "streakDays": 45,
+          "languages": [
+            {
+              "name": "TypeScript",
+              "percentage": 58
+            },
+            {
+              "name": "CSS/SCSS",
+              "percentage": 24
+            },
+            {
+              "name": "Rust/Wasm",
+              "percentage": 10
+            },
+            {
+              "name": "HTML",
+              "percentage": 8
+            }
+          ],
+          "topRepositories": [
+            {
+              "name": "super-fast-virtual-grid",
+              "description": "Zero-dependency virtualized table rendering 1,000,000 rows at 60fps with WebGPU acceleration",
+              "stars": 310,
+              "forks": 48,
+              "language": "TypeScript",
+              "testCoverage": 94,
+              "hasCI": true,
+              "architectureScore": 95,
+              "verifiedEvidence": "Maintains 60fps scrolling on million-row datasets via offscreen canvas and SIMD WebAssembly workers."
+            }
+          ]
+        },
+        "leetcode": {
+          "handle": "devansh_ui",
+          "url": "https://leetcode.com/devansh_ui",
+          "verified": true,
+          "solvedTotal": 310,
+          "easy": 140,
+          "medium": 150,
+          "hard": 20,
+          "contestRating": 1720,
+          "rankingPercentile": 78,
+          "badges": [
+            "50 Days Badge"
+          ]
+        },
+        "behance": {
+          "handle": "devansh_designs",
+          "url": "https://behance.net/devansh_designs",
+          "verified": true,
+          "projectCount": 12,
+          "appreciations": 890,
+          "featuredDesign": "Design System 3.0: High-Contrast Accessible Components"
+        },
+        "portfolio": {
+          "url": "https://devansh.design",
+          "verified": true,
+          "techStack": [
+            "Astro",
+            "WebGPU",
+            "Tailwind"
+          ]
+        }
+      },
+      "developerIntelligence": {
+        "repoQualityScore": 94,
+        "languageDiversity": 80,
+        "architectureIndex": 95,
+        "testingCoverage": 94,
+        "commitCadence": 91,
+        "authenticContributionRate": 98,
+        "codeComplexity": "Frontend Performance, WebAssembly & Canvas rendering",
+        "documentationQuality": "Exemplary (Interactive component playground, Lighthouse audits)"
+      },
+      "competencies": {
+        "system_design": 86,
+        "code_quality": 95,
+        "algorithmic_skills": 79,
+        "architecture": 96,
+        "collaboration": 91,
+        "domain_expertise": 97
+      },
+      "percentileBenchmarking": {
+        "overallPercentile": 92.5,
+        "poolSize": 1240,
+        "systemDesignRank": 82,
+        "codeQualityRank": 16,
+        "algorithmsRank": 140,
+        "architectureRank": 19
+      },
+      "interviewPanel": {
+        "completed": true,
+        "overallScore": 91,
+        "timestamp": "2026-10-18T10:30:00Z",
+        "agents": {
+          "alex_tech_lead": {
+            "name": "Alex",
+            "role": "Tech Lead Agent",
+            "focus": "DOM Optimization, Web Workers, Bundle Treeshaking",
+            "score": 96,
+            "verdict": "Exceptional",
+            "feedback": "World-class understanding of browser rendering pipelines, paint compositing layers, and WebAssembly boundary serialization."
+          },
+          "elena_architect": {
+            "name": "Elena",
+            "role": "System Architect Agent",
+            "focus": "Micro-Frontends, Global State, Asset CDN Invalidation",
+            "score": 89,
+            "verdict": "Very Good",
+            "feedback": "Strong understanding of module federation and cache invalidation strategies."
+          },
+          "marcus_behavioral": {
+            "name": "Marcus",
+            "role": "Behavioral & Culture Agent",
+            "focus": "Accessibility Advocacy, Design Collaboration",
+            "score": 93,
+            "verdict": "Strong Alignment",
+            "feedback": "Passionate advocate for WCAG 2.2 AAA accessibility compliance and screen-reader usability testing."
+          }
+        },
+        "transcript": [
+          {
+            "speaker": "Alex (Tech Lead)",
+            "avatar": "🤖",
+            "message": "Devansh, in your virtual grid, how do you eliminate layout thrashing during continuous high-speed scroll events?"
+          },
+          {
+            "speaker": "Devansh Patel",
+            "avatar": "👨‍💻",
+            "message": "I decouple scroll listener measurements from DOM mutations using `requestAnimationFrame` scheduling and batch transform updates via `translate3d` to stay on GPU composite layers without triggering reflows."
+          }
+        ]
+      },
+      "explainableReport": {
+        "verdict": "STRONG HIRE",
+        "verdictColor": "emerald",
+        "matchScore": 93,
+        "confidence": 96,
+        "executiveSummary": "Devansh Patel is a premier Frontend and Web Performance Architect. Demonstrates deep browser internals mastery, high test coverage (94%), and outstanding design system craftsmanship. 95% code quality index.",
+        "keyStrengths": [
+          "State of the art virtualized rendering and WebGPU/Wasm performance optimization.",
+          "High testing discipline with 94% test coverage and e2e cross-browser regression suites.",
+          "WCAG AAA accessibility compliance champion.",
+          "Highly praised by Tech Lead agent for zero layout thrashing DOM architecture."
+        ],
+        "redFlagsAndRisks": [
+          "Less emphasis on complex backend microservices, but well-suited for Frontend Architect role."
+        ],
+        "suggestedFollowUp": "Review alignment on engineering team leadership and design token tooling."
+      }
+    },
+    {
+      "id": "cand-005",
+      "name": "Aarav Nair",
+      "title": "Junior-Mid Full-Stack Engineer",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+      "location": "Delhi, India",
+      "yearsExperience": 1.8,
+      "primaryRole": "fullstack-engineer",
+      "status": "Needs Review / Moderate Fit",
+      "platforms": {
+        "github": {
+          "handle": "aarav-nair-code",
+          "url": "https://github.com/aarav-nair-code",
+          "verified": true,
+          "publicRepos": 14,
+          "totalStars": 24,
+          "totalCommitsLastYear": 420,
+          "streakDays": 14,
+          "languages": [
+            {
+              "name": "JavaScript",
+              "percentage": 70
+            },
+            {
+              "name": "HTML/CSS",
+              "percentage": 20
+            },
+            {
+              "name": "Python",
+              "percentage": 10
+            }
+          ],
+          "topRepositories": [
+            {
+              "name": "recipe-sharing-app",
+              "description": "Simple recipe CRUD app built with MERN stack",
+              "stars": 12,
+              "forks": 3,
+              "language": "JavaScript",
+              "testCoverage": 22,
+              "hasCI": false,
+              "architectureScore": 62,
+              "verifiedEvidence": "Monolithic Express backend without validation schemas; unit tests cover basic utility helpers only."
+            }
+          ]
+        },
+        "leetcode": {
+          "handle": "aarav_n",
+          "url": "https://leetcode.com/aarav_n",
+          "verified": true,
+          "solvedTotal": 180,
+          "easy": 110,
+          "medium": 65,
+          "hard": 5,
+          "contestRating": 1540,
+          "rankingPercentile": 54,
+          "badges": [
+            "Bronze"
+          ]
+        },
+        "linkedin": {
+          "handle": "aarav-nair-swe",
+          "url": "https://linkedin.com/in/aarav-nair-swe",
+          "verified": true,
+          "endorsements": 14,
+          "verifiedTenure": "1.5 yrs at Early Stage Startup",
+          "recommendations": 1
+        },
+        "portfolio": {
+          "url": "https://aarav-portfolio.vercel.app",
+          "verified": true,
+          "techStack": [
+            "React",
+            "Bootstrap"
+          ]
+        }
+      },
+      "developerIntelligence": {
+        "repoQualityScore": 64,
+        "languageDiversity": 60,
+        "architectureIndex": 61,
+        "testingCoverage": 22,
+        "commitCadence": 58,
+        "authenticContributionRate": 82,
+        "codeComplexity": "Basic CRUD / Monolithic patterns",
+        "documentationQuality": "Minimal README files"
+      },
+      "competencies": {
+        "system_design": 58,
+        "code_quality": 62,
+        "algorithmic_skills": 64,
+        "architecture": 59,
+        "collaboration": 72,
+        "domain_expertise": 61
+      },
+      "percentileBenchmarking": {
+        "overallPercentile": 56.4,
+        "poolSize": 1240,
+        "systemDesignRank": 540,
+        "codeQualityRank": 490,
+        "algorithmsRank": 460,
+        "architectureRank": 520
+      },
+      "interviewPanel": {
+        "completed": true,
+        "overallScore": 64,
+        "timestamp": "2026-10-17T09:00:00Z",
+        "agents": {
+          "alex_tech_lead": {
+            "name": "Alex",
+            "role": "Tech Lead Agent",
+            "focus": "Clean Code, Unit Testing, Async Handling",
+            "score": 62,
+            "verdict": "Moderate",
+            "feedback": "Struggled with error handling in asynchronous JavaScript promises; unhandled rejection risks in sample endpoint."
+          },
+          "elena_architect": {
+            "name": "Elena",
+            "role": "System Architect Agent",
+            "focus": "Database Indexing, Scalability, Caching",
+            "score": 58,
+            "verdict": "Below Expectation for Senior/Mid",
+            "feedback": "Unable to explain B-Tree index structure or explain plan analysis. Suggested storing unbounded arrays directly in Mongo documents."
+          },
+          "marcus_behavioral": {
+            "name": "Marcus",
+            "role": "Behavioral & Culture Agent",
+            "focus": "Eagerness to Learn, Team Collaboration",
+            "score": 78,
+            "verdict": "Good Potential",
+            "feedback": "Enthusiastic, candid about knowledge gaps, receptive to mentorship and coaching."
+          }
+        },
+        "transcript": [
+          {
+            "speaker": "Elena (System Architect)",
+            "avatar": "🏛️",
+            "message": "Aarav, how would you design a database schema for an e-commerce order history with millions of orders?"
+          },
+          {
+            "speaker": "Aarav Nair",
+            "avatar": "👨‍🎓",
+            "message": "I would put all items into a single document inside a user's record in MongoDB so we can fetch everything in one query."
+          },
+          {
+            "speaker": "Alex (Tech Lead)",
+            "avatar": "🤖",
+            "message": "What happens when a user has thousands of orders? How does MongoDB handle the 16MB document limit?"
+          },
+          {
+            "speaker": "Aarav Nair",
+            "avatar": "👨‍🎓",
+            "message": "Oh, I hadn't considered the 16MB document limit. We'd probably need to separate it into a different orders collection and use references or lookup queries."
+          }
+        ]
+      },
+      "explainableReport": {
+        "verdict": "NEEDS REVIEW / JUNIOR LEVEL",
+        "verdictColor": "amber",
+        "matchScore": 62,
+        "confidence": 92,
+        "executiveSummary": "Aarav Nair shows enthusiasm and foundational JavaScript knowledge but falls below the threshold for Senior/Mid Full-Stack expectations. Low testing coverage (22%), lack of CI automation, and limited database scaling intuition indicate readiness for an entry-level apprenticeship or junior role with close mentorship.",
+        "keyStrengths": [
+          "Honest and receptive to feedback during technical probing.",
+          "Familiar with standard React/Node scaffolding and basic REST API creation.",
+          "Consistent growth in LeetCode problem solving over the past 6 months."
+        ],
+        "redFlagsAndRisks": [
+          "Critically low test coverage (22%) and no CI/CD automation in public projects.",
+          "Database anti-patterns (unbounded embedded document designs).",
+          "Difficulty handling async error boundaries in Node.js runtime."
+        ],
+        "suggestedFollowUp": "Consider for Junior Engineer role or paired programming internship; recommend structured training on automated testing and relational indexing."
+      }
+    }
+  ]
+}

@@ -1,0 +1,1381 @@
+/* ===================================================================
+   HireGraph-AI: Light Theme with Solid Colors
+   "From resumes to real capability."
+   =================================================================== */
+
+:root {
+  /* Solid Vibrant Palette */
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --bg-hover: #e2e8f0;
+
+  --border-light: #e2e8f0;
+  --border-solid: #cbd5e1;
+  --border-focus: #4338ca;
+
+  /* Solid Brand & Role Colors */
+  --color-primary: #4338ca;       /* Solid Royal Indigo */
+  --color-primary-light: #e0e7ff;
+  --color-primary-dark: #3730a3;
+
+  --color-blue: #1d4ed8;          /* Solid Sapphire Blue */
+  --color-blue-light: #dbeafe;
+
+  --color-emerald: #059669;       /* Solid Emerald Green (Verified/High Fit) */
+  --color-emerald-light: #d1fae5;
+
+  --color-amber: #d97706;         /* Solid Amber/Orange (LeetCode/Median) */
+  --color-amber-light: #fef3c7;
+
+  --color-violet: #7c3aed;        /* Solid Violet (Architecture/Repos) */
+  --color-violet-light: #ede9fe;
+
+  --color-rose: #e11d48;          /* Solid Rose (Red Flags/Critical) */
+  --color-rose-light: #ffe4e6;
+
+  --color-cyan: #0891b2;          /* Solid Cyan (Kaggle/Data) */
+  --color-cyan-light: #cffafe;
+
+  --color-pink: #db2777;          /* Solid Pink (Behance/Design) */
+  --color-pink-light: #fce7f3;
+
+  /* Text Colors */
+  --text-main: #0f172a;           /* Solid Deep Charcoal */
+  --text-secondary: #334155;      /* Solid Medium Slate */
+  --text-muted: #64748b;          /* Solid Light Slate */
+  --text-white: #ffffff;
+
+  /* Typography & Geometry */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ================= Top Navigation Bar ================= */
+.top-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 2rem;
+  background-color: var(--bg-card);
+  border-bottom: 2px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-logo-badge {
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-primary);
+  color: var(--text-white);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 10px rgba(67, 56, 202, 0.3);
+}
+
+.brand-text h1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-text h1 span.highlight {
+  color: var(--color-primary);
+}
+
+.brand-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.team-badge {
+  display: inline-block;
+  background-color: var(--color-violet-light);
+  color: var(--color-violet);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid #ddd6fe;
+  margin-left: 0.5rem;
+}
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.role-selector-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--bg-subtle);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-solid);
+}
+
+.role-selector-wrap label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.role-selector-wrap select {
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-primary);
+  color: var(--text-white);
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(67, 56, 202, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1.5px solid var(--border-solid);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-subtle);
+  border-color: var(--color-primary);
+}
+
+/* ================= Main Layout ================= */
+.app-container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  height: calc(100vh - 66px);
+  overflow: hidden;
+}
+
+/* ================= Left Sidebar (Candidates List) ================= */
+.sidebar-panel {
+  background-color: var(--bg-card);
+  border-right: 2px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  padding: 1.25rem 1.25rem 0.75rem 1.25rem;
+  border-bottom: 1.5px solid var(--border-light);
+}
+
+.sidebar-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.candidate-count-badge {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.search-box-wrap input {
+  width: 100%;
+  padding: 0.55rem 0.85rem;
+  border: 1.5px solid var(--border-solid);
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  outline: none;
+  background-color: var(--bg-subtle);
+  color: var(--text-main);
+  transition: border-color 0.2s;
+}
+
+.search-box-wrap input:focus {
+  border-color: var(--color-primary);
+  background-color: var(--bg-card);
+}
+
+.candidate-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.candidate-card {
+  padding: 0.85rem;
+  background-color: var(--bg-card);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.candidate-card:hover {
+  border-color: var(--color-primary);
+  background-color: #fafafa;
+  transform: translateY(-1px);
+}
+
+.candidate-card.active {
+  border: 2px solid var(--color-primary);
+  background-color: #f5f3ff;
+  box-shadow: 0 4px 10px rgba(67, 56, 202, 0.12);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.candidate-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--border-solid);
+}
+
+.candidate-card.active .candidate-avatar {
+  border-color: var(--color-primary);
+}
+
+.candidate-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.candidate-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.candidate-role-text {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-badges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+}
+
+.match-pill {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.match-pill.emerald {
+  background-color: var(--color-emerald);
+  color: var(--text-white);
+}
+
+.match-pill.amber {
+  background-color: var(--color-amber);
+  color: var(--text-white);
+}
+
+.match-pill.rose {
+  background-color: var(--color-rose);
+  color: var(--text-white);
+}
+
+.percentile-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background-color: var(--bg-subtle);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-solid);
+}
+
+.platform-icons-row {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.platform-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+.platform-tag.github {
+  background-color: #0284c7;
+  color: white;
+}
+
+.platform-tag.leetcode {
+  background-color: #d97706;
+  color: white;
+}
+
+.platform-tag.linkedin {
+  background-color: #2563eb;
+  color: white;
+}
+
+.platform-tag.kaggle {
+  background-color: #0891b2;
+  color: white;
+}
+
+.platform-tag.behance {
+  background-color: #db2777;
+  color: white;
+}
+
+/* Sidebar Impact Banner (Slide 6) */
+.sidebar-impact-banner {
+  padding: 0.85rem 1rem;
+  background-color: #eff6ff;
+  border-top: 2px solid #bfdbfe;
+  border-bottom: 2px solid #bfdbfe;
+  font-size: 0.8rem;
+}
+
+.impact-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-blue);
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.impact-stats {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ================= Right Content Area ================= */
+.main-workspace {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: var(--bg-main);
+}
+
+/* Active Candidate Header Hero */
+.candidate-hero {
+  background-color: var(--bg-card);
+  padding: 1.5rem 2rem 1.25rem 2rem;
+  border-bottom: 2px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-profile-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.hero-info {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.hero-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  border: 3px solid var(--color-primary);
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(67, 56, 202, 0.2);
+}
+
+.hero-text h2 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hero-text .hero-sub {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+.hero-text .hero-extra {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.35rem;
+}
+
+.hero-stats-panel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-stat-card {
+  background-color: var(--bg-subtle);
+  border: 1.5px solid var(--border-solid);
+  border-radius: var(--radius-md);
+  padding: 0.55rem 1.1rem;
+  text-align: center;
+  min-width: 110px;
+}
+
+.hero-stat-card.highlight {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.stat-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.hero-stat-card.highlight .stat-value {
+  color: var(--color-primary);
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.4px;
+}
+
+/* ================= Tab Navigation ================= */
+.tab-navigation {
+  display: flex;
+  background-color: var(--bg-card);
+  border-bottom: 2px solid var(--border-light);
+  padding: 0 2rem;
+  gap: 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  background: transparent;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  color: var(--color-primary);
+}
+
+.tab-btn.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* ================= Tab Content Containers ================= */
+.tab-content-area {
+  padding: 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+/* ================= Card System ================= */
+.solid-card {
+  background-color: var(--bg-card);
+  border: 1.5px solid var(--border-solid);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  border-bottom: 1.5px solid var(--border-light);
+  padding-bottom: 0.75rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-title-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+/* ================= Tab 1: Evidence Graph Tab ================= */
+.graph-container-wrap {
+  position: relative;
+  background-color: #ffffff;
+  border: 2px solid var(--border-solid);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 580px;
+  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-columns: 1fr 340px;
+}
+
+.graph-canvas-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #fafbfc;
+  background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+
+#evidenceCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+}
+
+#evidenceCanvas:active {
+  cursor: grabbing;
+}
+
+.graph-controls {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.graph-ctrl-btn {
+  background-color: var(--bg-card);
+  border: 1.5px solid var(--border-solid);
+  color: var(--text-main);
+  font-weight: 700;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  font-size: 0.82rem;
+}
+
+.graph-ctrl-btn:hover {
+  background-color: var(--bg-subtle);
+  border-color: var(--color-primary);
+}
+
+.graph-legend-overlay {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid var(--border-solid);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.9rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+}
+
+/* Graph Node Inspector Sidebar */
+.graph-inspector-panel {
+  background-color: var(--bg-card);
+  border-left: 2px solid var(--border-light);
+  padding: 1.25rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.inspector-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.85rem;
+}
+
+.inspector-node-card {
+  background-color: var(--bg-subtle);
+  border: 1.5px solid var(--border-solid);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+.node-badge-type {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.node-inspect-label {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.node-inspect-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.node-props-table {
+  width: 100%;
+  font-size: 0.8rem;
+  border-collapse: collapse;
+}
+
+.node-props-table td {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.node-props-table td.prop-name {
+  font-weight: 700;
+  color: var(--text-muted);
+  width: 40%;
+}
+
+.node-props-table td.prop-val {
+  font-weight: 700;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* ================= Tab 2: Developer Intelligence ================= */
+.dev-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.metric-box {
+  background-color: var(--bg-card);
+  border: 1.5px solid var(--border-solid);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-header {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.metric-value-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 0.4rem 0;
+}
+
+.metric-big-num {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.metric-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+}
+
+/* Repositories Breakdown */
+.repo-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.repo-card {
+  border: 1.5px solid var(--border-solid);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  background-color: #ffffff;
+  transition: border-color 0.2s;
+}
+
+.repo-card:hover {
+  border-color: var(--color-primary);
+}
+
+.repo-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.repo-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.repo-stats-pills {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.stat-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: var(--bg-subtle);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-solid);
+}
+
+.repo-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.repo-evidence-callout {
+  background-color: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.82rem;
+  color: #166534;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.repo-evidence-callout strong {
+  color: #14532d;
+}
+
+/* ================= Tab 3: Role-Adaptive Evaluation ================= */
+.role-eval-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+
+.radar-chart-container {
+  position: relative;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weights-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.weights-table th {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  background-color: var(--bg-subtle);
+  border-bottom: 2px solid var(--border-solid);
+  font-weight: 800;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.weights-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-light);
+  font-weight: 600;
+}
+
+/* ================= Tab 4: AI Multi-Agent Interview Panel ================= */
+.agent-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.agent-persona-card {
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-solid);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-persona-card.alex {
+  border-top: 5px solid var(--color-blue);
+}
+
+.agent-persona-card.elena {
+  border-top: 5px solid var(--color-violet);
+}
+
+.agent-persona-card.marcus {
+  border-top: 5px solid var(--color-emerald);
+}
+
+.agent-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.agent-avatar-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background-color: var(--bg-subtle);
+  border: 1.5px solid var(--border-solid);
+}
+
+.agent-info h4 {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.agent-info p {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.agent-score-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-subtle);
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 0.75rem;
+}
+
+.agent-score-val {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.agent-notes-box {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  background-color: #fafbfc;
+  padding: 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  flex: 1;
+}
+
+/* Interview Dialogue Chat Container */
+.chat-transcript-box {
+  background-color: #f8fafc;
+  border: 1.5px solid var(--border-solid);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  max-height: 450px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chat-bubble {
+  display: flex;
+  gap: 0.85rem;
+  max-width: 85%;
+}
+
+.chat-bubble.agent {
+  align-self: flex-start;
+}
+
+.chat-bubble.candidate {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.chat-bubble-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-solid);
+  flex-shrink: 0;
+}
+
+.chat-bubble-content {
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-solid);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.chat-bubble.candidate .chat-bubble-content {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--text-white);
+}
+
+.chat-speaker-name {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.chat-bubble.candidate .chat-speaker-name {
+  color: #e0e7ff;
+}
+
+.chat-speaker-msg {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ================= Tab 5: Explainable Hiring Report ================= */
+.report-header-banner {
+  background-color: #ffffff;
+  border: 2px solid var(--border-solid);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.verdict-large-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-md);
+  font-size: 1.15rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.verdict-large-badge.emerald {
+  background-color: var(--color-emerald);
+  color: white;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+}
+
+.verdict-large-badge.amber {
+  background-color: var(--color-amber);
+  color: white;
+}
+
+.verdict-large-badge.rose {
+  background-color: var(--color-rose);
+  color: white;
+}
+
+.report-section {
+  margin-bottom: 1.5rem;
+}
+
+.report-section-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.4px;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.report-summary-box {
+  background-color: #f8fafc;
+  border-left: 4px solid var(--color-primary);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.strengths-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.strength-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background-color: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+  color: #166534;
+}
+
+.risk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background-color: #fff1f2;
+  border: 1.5px solid #fecdd3;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+  color: #9f1239;
+}
+
+/* ================= Tab 6: Applicant Pool Benchmarking ================= */
+.benchmark-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+
+.benchmark-chart-box {
+  height: 340px;
+  position: relative;
+}
+
+/* ================= Modal Styling ================= */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-card {
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-solid);
+  border-radius: var(--radius-lg);
+  width: 580px;
+  max-width: 90vw;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: modalPop 0.2s ease-out;
+}
+
+@keyframes modalPop {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 2px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.modal-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.form-group input, .form-group select {
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid var(--border-solid);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.form-group input:focus, .form-group select:focus {
+  border-color: var(--color-primary);
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 2px solid var(--border-light);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  background-color: var(--bg-subtle);
+}
+
+/* Agent Processing Animation Pipeline inside Modal */
+.agent-pipeline-status {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-solid);
+}
+
+.agent-step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.agent-step-item.active {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.agent-step-item.done {
+  color: var(--color-emerald);
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .app-container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .sidebar-panel {
+    max-height: 400px;
+  }
+  .graph-container-wrap {
+    grid-template-columns: 1fr;
+    height: 500px;
+  }
+  .graph-inspector-panel {
+    display: none;
+  }
+  .role-eval-layout, .benchmark-grid {
+    grid-template-columns: 1fr;
+  }
+  .agent-cards-row {
+    grid-template-columns: 1fr;
+  }
+}

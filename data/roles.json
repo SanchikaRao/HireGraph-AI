@@ -1,0 +1,74 @@
+{
+  "roles": [
+    {
+      "id": "backend-engineer",
+      "name": "Backend / Distributed Systems Engineer",
+      "description": "Designs scalable APIs, distributed systems, database schemas, and microservice infrastructure.",
+      "weights": {
+        "system_design": 0.30,
+        "code_quality": 0.25,
+        "algorithmic_skills": 0.20,
+        "architecture": 0.15,
+        "collaboration": 0.10
+      },
+      "benchmark_median": 72,
+      "core_skills": ["Distributed Systems", "PostgreSQL", "Go / Rust / Node.js", "Docker / K8s", "Concurrency", "REST / gRPC"]
+    },
+    {
+      "id": "aiml-engineer",
+      "name": "AI / Machine Learning Engineer",
+      "description": "Develops deep learning architectures, LLM agents, model training pipelines, and vector search systems.",
+      "weights": {
+        "domain_expertise": 0.30,
+        "algorithmic_skills": 0.25,
+        "system_design": 0.20,
+        "code_quality": 0.15,
+        "collaboration": 0.10
+      },
+      "benchmark_median": 70,
+      "core_skills": ["PyTorch", "Transformers", "LangGraph", "Vector DBs / RAG", "Python / NumPy", "Model Fine-Tuning"]
+    },
+    {
+      "id": "fullstack-engineer",
+      "name": "Full-Stack Software Engineer",
+      "description": "Builds end-to-end web applications bridging robust backends with responsive, performant user interfaces.",
+      "weights": {
+        "code_quality": 0.25,
+        "system_design": 0.20,
+        "algorithmic_skills": 0.20,
+        "architecture": 0.20,
+        "collaboration": 0.15
+      },
+      "benchmark_median": 74,
+      "core_skills": ["React / Next.js", "Node.js / Express", "PostgreSQL", "API Design", "Tailwind / CSS", "State Management"]
+    },
+    {
+      "id": "frontend-engineer",
+      "name": "Frontend & UI/UX Architect",
+      "description": "Crafts accessible, high-performance web applications, design systems, and fluid interactive visualizations.",
+      "weights": {
+        "architecture": 0.30,
+        "code_quality": 0.25,
+        "domain_expertise": 0.20,
+        "collaboration": 0.15,
+        "algorithmic_skills": 0.10
+      },
+      "benchmark_median": 73,
+      "core_skills": ["TypeScript", "React / Vue", "CSS Architecture", "Web Performance", "Figma / Design Systems", "Canvas / SVG"]
+    },
+    {
+      "id": "product-lead",
+      "name": "Product & Engineering Lead",
+      "description": "Guides technical strategy, drives cross-functional team delivery, and evaluates architecture trade-offs.",
+      "weights": {
+        "collaboration": 0.35,
+        "system_design": 0.25,
+        "architecture": 0.20,
+        "code_quality": 0.10,
+        "algorithmic_skills": 0.10
+      },
+      "benchmark_median": 76,
+      "core_skills": ["System Architecture", "Tech Leadership", "Product Roadmap", "Code Review", "Agile Execution", "Mentorship"]
+    }
+  ]
+}

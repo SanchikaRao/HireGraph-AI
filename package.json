@@ -1,0 +1,23 @@
+{
+  "name": "hiregraph-ai",
+  "version": "1.0.0",
+  "description": "Evidence-Based AI Talent Intelligence Platform - From resumes to real capability",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "talent-intelligence",
+    "multi-agent",
+    "developer-intelligence",
+    "evidence-graph",
+    "hiring-ai"
+  ],
+  "author": "Team Laapata Ladies",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "cors": "^2.8.5"
+  }
+}
